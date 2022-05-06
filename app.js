@@ -16,7 +16,6 @@ const loginRouter = require('./routes/login');
 const logoutRouter = require('./routes/logout');
 const verifyTokenRouter = require('./routes/verify-token');
 const revenueUpdatesRouter = require('./routes/revenue-updates');
-const dummyRouter = require('./routes/dummy');
 
 const app = express();
 
@@ -36,7 +35,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(cors(corsOptions));
 app.use('/notes', notesRouter);
-app.use("/dummy",dummyRouter);
 app.use('/users', usersRouter);
 app.use('/signup',Multer.none(),signupRouter);
 app.use('/login',Multer.none(),loginRouter);
